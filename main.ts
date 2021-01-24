@@ -19,6 +19,12 @@ namespace signal {
         }
     }
 
+    //% block="signal broche $analog_pin"
+    //% analog_pin.defl = AnalogPin.P0
+    export function signal_pin(analog_pin: AnalogPin): number  {
+       return pins.analogReadPin(analog_pin)*3.3/1023
+    }
+
     //% block="Microsecondes"
     export function microsecondes(): number {
         return control.micros();
